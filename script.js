@@ -28,3 +28,15 @@ $(".time-block").each(function () {
 });
 
 //save user input
+
+$(".saveBtn").on("click", function (event) {
+  var value = $(this).siblings(".description").val();
+  var time = $(this).parent().attr("id");
+  localStorage.setItem(time, value);
+  var task = localStorage.getItem(value);
+  
+  
+  $(".description").text(localStorage.getItem(value));
+  
+});
+
